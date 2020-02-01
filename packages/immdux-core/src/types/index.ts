@@ -1,8 +1,7 @@
-import { Collection, Map, OrderedSet, Seq } from 'immutable';
+import { Collection, Map, OrderedSet } from 'immutable';
 import { Observable } from 'rxjs';
 
 import { StateObservable } from '../handlers/observables';
-
 
 // TODO: deprecate alternative keypath types, only accept array
 
@@ -17,7 +16,7 @@ export interface ReducibleIterable<K = any, V = any> extends Iterable<V> {
       reduction?: R,
       value?: V,
       key?: K,
-      iter?: /*this*/ Collection<K, V> | Iterable<V> | V[],
+      iter?: /* this*/ Collection<K, V> | Iterable<V> | V[],
     ) => R,
     initialReduction?: R,
     context?: any,
